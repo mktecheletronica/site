@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MKTech Eletrônica - Portal de Acesso</title>
+    <style>
+        :root {
+            --primary-blue: #005696;
+            --secondary-blue: #0078d4;
+            --text-dark: #333;
+            --bg-light: #f4f7f9;
+            --white: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            background-color: var(--white);
+            padding: 40px 30px;
+            border-radius: 20px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            width: 100%;
+            max-width: 400px;
+            text-align: center;
+        }
+
+        .logo {
+            max-width: 250px;
+            height: auto;
+            margin-bottom: 30px;
+        }
+
+        h1 {
+            font-size: 1.2rem;
+            margin-bottom: 25px;
+            color: var(--primary-blue);
+            font-weight: 600;
+        }
+
+        .links-container {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .btn {
+            display: block;
+            padding: 15px 20px;
+            background-color: var(--white);
+            color: var(--primary-blue);
+            text-decoration: none;
+            border: 2px solid var(--primary-blue);
+            border-radius: 12px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            font-size: 1rem;
+        }
+
+        .btn:hover {
+            background-color: var(--primary-blue);
+            color: var(--white);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 86, 150, 0.3);
+        }
+
+        .footer {
+            margin-top: 40px;
+            font-size: 0.8rem;
+            color: #888;
+        }
+
+        /* Ajuste para telas pequenas */
+        @media (max-width: 480px) {
+            .container {
+                padding: 30px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- O arquivo de imagem deve se chamar logo.png e estar na mesma pasta -->
+        <img src="logo.png" alt="MKTech Eletrônica" class="logo" onerror="this.style.display='none'; document.getElementById('alt-logo').style.display='block';">
+        <h2 id="alt-logo" style="display:none; color:#005696; margin-bottom: 20px;">MKTech Eletrônica</h2>
+
+        <h1>Portal de Serviços</h1>
+
+        <div class="links-container">
+            <!-- Substitua os links abaixo pelos endereços reais (ex: seu DDNS ou IP) -->
+                        
+            <a href="#" class="btn">Dashboard Multec 700</a>
+            
+            <a href="#" class="btn">Ordem de Serviço</a>
+            
+            <a href="mailto:contato@mktecheletronica.com.br" class="btn">Falar com Suporte</a>
+        </div>
+
+        <div class="footer">
+            &copy; 2026 MKTech Eletrônica <br>
+            Desenvolvimento e Tecnologia
+        </div>
+    </div>
+
+</body>
+</html>
