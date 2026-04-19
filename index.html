@@ -3,27 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MKTech Eletrônica - Portal Oficial</title>
+    <title>MKTech Eletrônica - Portal de Acesso</title>
     <style>
         :root {
-            --primary: #005696;
-            --secondary: #0078d4;
-            --accent: #00c2ff;
-            --bg-dark: #0f172a;
-            --text-main: #1e293b;
-            --text-light: #64748b;
+            --primary-blue: #005696;
+            --secondary-blue: #0078d4;
+            --text-dark: #333;
+            --bg-light: #f4f7f9;
+            --white: #ffffff;
         }
 
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
         }
 
         body {
-            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
-            color: var(--text-main);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-light);
+            color: var(--text-dark);
             display: flex;
             justify-content: center;
             align-items: center;
@@ -31,54 +30,38 @@
             padding: 20px;
         }
 
-        /* Efeito de fundo tecnológico sutil */
-        body::before {
-            content: "";
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            background-image: radial-gradient(var(--primary) 0.5px, transparent 0.5px);
-            background-size: 30px 30px;
-            opacity: 0.1;
-            z-index: -1;
-        }
-
         .container {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
+            background-color: var(--white);
             padding: 40px 30px;
-            border-radius: 24px;
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+            border-radius: 20px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
             width: 100%;
-            max-width: 450px;
+            max-width: 420px;
             text-align: center;
-            border: 1px solid rgba(255, 255, 255, 0.3);
         }
 
         .logo {
-            max-width: 280px;
+            max-width: 100%;
             height: auto;
-            margin-bottom: 25px;
-            filter: drop-shadow(0 5px 15px rgba(0,0,0,0.1));
+            margin-bottom: 30px;
         }
 
-        .section-title {
-            font-size: 0.85rem;
+        h1 {
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+            color: var(--primary-blue);
+            font-weight: 600;
             text-transform: uppercase;
-            letter-spacing: 1.5px;
-            color: var(--text-light);
-            margin: 25px 0 15px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
+            letter-spacing: 1px;
         }
 
-        .section-title::before, .section-title::after {
-            content: "";
-            height: 1px;
-            background: #e2e8f0;
-            flex-grow: 1;
+        .section-label {
+            font-size: 0.8rem;
+            color: #888;
+            margin: 20px 0 10px;
+            text-align: left;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 5px;
         }
 
         .links-container {
@@ -88,98 +71,75 @@
         }
 
         .btn {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 16px 20px;
-            background-color: #f8fafc;
-            color: var(--primary);
+            display: block;
+            padding: 14px 20px;
+            background-color: var(--white);
+            color: var(--primary-blue);
             text-decoration: none;
-            border: 1px solid #e2e8f0;
-            border-radius: 14px;
+            border: 2px solid var(--primary-blue);
+            border-radius: 12px;
             font-weight: 600;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            transition: all 0.3s ease;
             font-size: 0.95rem;
         }
 
-        .btn svg {
-            width: 20px;
-            height: 20px;
-            opacity: 0.7;
-        }
-
         .btn:hover {
-            background-color: var(--primary);
-            color: white;
-            transform: translateY(-3px);
-            box-shadow: 0 10px 20px -5px rgba(0, 86, 150, 0.4);
-            border-color: var(--primary);
+            background-color: var(--primary-blue);
+            color: var(--white);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 86, 150, 0.2);
         }
 
-        .btn:hover svg {
-            opacity: 1;
-            transform: translateX(3px);
-        }
-
-        /* Estilo especial para Downloads */
+        /* Estilo sutil para downloads */
         .btn-download {
-            background-color: #eff6ff;
-            border-color: #bfdbfe;
+            background-color: #f0f7ff;
+            border-style: dashed;
         }
 
         .footer {
-            margin-top: 35px;
-            padding-top: 20px;
-            border-top: 1px solid #f1f5f9;
-            font-size: 0.75rem;
-            color: var(--text-light);
-            line-height: 1.6;
+            margin-top: 40px;
+            font-size: 0.8rem;
+            color: #999;
         }
 
-        .footer b {
-            color: var(--primary);
-        }
-
-        /* Animação de entrada */
-        @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        .container {
-            animation: fadeInUp 0.6s ease-out;
+        @media (max-width: 480px) {
+            .container {
+                padding: 30px 20px;
+            }
         }
     </style>
 </head>
 <body>
 
     <div class="container">
-        <!-- Logo Principal -->
+        <!-- Logo -->
         <img src="logo.png" alt="MKTech Eletrônica" class="logo" onerror="this.style.display='none'; document.getElementById('alt-logo').style.display='block';">
         <h2 id="alt-logo" style="display:none; color:#005696; margin-bottom: 20px;">MKTech Eletrônica</h2>
 
-        <!-- Seção de Manuais -->
-        <div class="section-title">Manuais Técnicos</div>
+        <h1>Portal de Acesso</h1>
+
         <div class="links-container">
-            <a href="https://drive.google.com/file/d/1Pm4dTwFf1sJSx56seLnH4iO6USf37CGo/view?usp=drive_link" target="_blank" class="btn btn-download">
-                <span>📄 Manual Versão 2.1</span>
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
-            </a>
             
-            <a href="https://drive.google.com/file/d/16sOiKX-XdceAorul1VuyLyZXIaJ3I9TN/view?usp=drive_link" target="_blank" class="btn btn-download">
-                <span>📄 Manual Versão 3.0</span>
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+            <div class="section-label">Manuais Técnicos</div>
+            <a href="https://drive.google.com/file/d/1Pm4dTwFf1sJSx56seLnH4iO6USf37CGo/view?usp=drive_link" target="_blank" class="btn btn-download">
+                📥 Baixar Manual v2.1
             </a>
+            <a href="https://drive.google.com/file/d/16sOiKX-XdceAorul1VuyLyZXIaJ3I9TN/view?usp=drive_link" target="_blank" class="btn btn-download">
+                📥 Baixar Manual v3.0
+            </a>
+
+            <div class="section-label">Serviços</div>
+            <a href="#" class="btn">Dashboard Multec 700</a>
+            <a href="#" class="btn">Ordem de Serviço</a>
+            <a href="mailto:contato@mktecheletronica.com.br" class="btn">Suporte via E-mail</a>
+            
         </div>
 
-        <!-- Seção de Serviços -->
-        <div class="section-title">Serviços e Ferramentas</div>
-        <div class="links-container">
-            <a href="#" class="btn">
-                <span>📊 Dashboard Multec 700</span>
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><line x1="3" y1="9" x2="21" y2="9"></line><line x1="9" y1="21" x2="9" y2="9"></line></svg>
-            </a>
-            
-            <a href="#" class="btn">
-                <span>📋 Ordem de Serviço</span>
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2
+        <div class="footer">
+            &copy; 2026 MKTech Eletrônica <br>
+            Soluções em Tecnologia e Eletrônica Automotiva
+        </div>
+    </div>
+
+</body>
+</html>
