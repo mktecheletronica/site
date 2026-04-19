@@ -43,25 +43,18 @@
         .logo {
             max-width: 100%;
             height: auto;
-            margin-bottom: 30px;
-        }
-
-        h1 {
-            font-size: 1.1rem;
             margin-bottom: 20px;
-            color: var(--primary-blue);
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 1px;
         }
 
         .section-label {
             font-size: 0.8rem;
             color: #888;
-            margin: 20px 0 10px;
+            margin: 25px 0 10px;
             text-align: left;
             border-bottom: 1px solid #eee;
             padding-bottom: 5px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
 
         .links-container {
@@ -72,7 +65,7 @@
 
         .btn {
             display: block;
-            padding: 14px 20px;
+            padding: 14px 15px;
             background-color: var(--white);
             color: var(--primary-blue);
             text-decoration: none;
@@ -80,7 +73,8 @@
             border-radius: 12px;
             font-weight: 600;
             transition: all 0.3s ease;
-            font-size: 0.95rem;
+            font-size: 0.9rem;
+            line-height: 1.2;
         }
 
         .btn:hover {
@@ -90,10 +84,21 @@
             box-shadow: 0 5px 15px rgba(0, 86, 150, 0.2);
         }
 
-        /* Estilo sutil para downloads */
         .btn-download {
             background-color: #f0f7ff;
             border-style: dashed;
+        }
+
+        .btn-whatsapp {
+            border-color: #25d366;
+            color: #128c7e;
+        }
+
+        .btn-whatsapp:hover {
+            background-color: #25d366;
+            border-color: #25d366;
+            color: white;
+            box-shadow: 0 5px 15px rgba(37, 211, 102, 0.2);
         }
 
         .footer {
@@ -116,22 +121,28 @@
         <img src="logo.png" alt="MKTech Eletrônica" class="logo" onerror="this.style.display='none'; document.getElementById('alt-logo').style.display='block';">
         <h2 id="alt-logo" style="display:none; color:#005696; margin-bottom: 20px;">MKTech Eletrônica</h2>
 
-        <h1>Portal de Acesso</h1>
-
         <div class="links-container">
             
             <div class="section-label">Manuais Técnicos</div>
             <a href="https://drive.google.com/file/d/1Pm4dTwFf1sJSx56seLnH4iO6USf37CGo/view?usp=drive_link" target="_blank" class="btn btn-download">
-                📥 Baixar Manual v2.1
+                Manual Scanner Multec 700 DashBoard - Versão 2.1.pdf
             </a>
             <a href="https://drive.google.com/file/d/16sOiKX-XdceAorul1VuyLyZXIaJ3I9TN/view?usp=drive_link" target="_blank" class="btn btn-download">
-                📥 Baixar Manual v3.0
+                Manual Scanner Multec 700 DashBoard - Versão 3.0.pdf
             </a>
 
-            <div class="section-label">Serviços</div>
-            <a href="#" class="btn">Dashboard Multec 700</a>
-            <a href="#" class="btn">Ordem de Serviço</a>
-            <a href="mailto:contato@mktecheletronica.com.br" class="btn">Suporte via E-mail</a>
+            <div class="section-label">Programas para Atualização</div>
+            <a href="https://drive.google.com/file/d/1LwDG6vAvTdwWQeZuFFN71CUBlMtJjnZe/view?usp=drive_link" target="_blank" class="btn btn-download">
+                Software para Atualização de Firmware Multec 700 DashBoard 2.1 para versão 3.0.
+            </a>
+
+            <div class="section-label">Contato</div>
+            <a href="mailto:contato@mktecheletronica.com.br" class="btn">
+                📩 Suporte via E-mail
+            </a>
+            <a href="https://wa.me/5551983547295" target="_blank" class="btn btn-whatsapp">
+                🟢 Suporte via WhatsApp: (51) 98354-7295
+            </a>
             
         </div>
 
