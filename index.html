@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MKTech Eletrônica - Portal de Acesso</title>
+    <title>MKTech Eletrônica - Portal</title>
     <style>
         :root {
             --primary-blue: #005696;
@@ -11,6 +11,8 @@
             --text-dark: #333;
             --bg-light: #f4f7f9;
             --white: #ffffff;
+            --accent-green: #25d366;
+            --badge-new: #e67e22;
         }
 
         * {
@@ -33,83 +35,113 @@
         .container {
             background-color: var(--white);
             padding: 40px 30px;
-            border-radius: 20px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            border-radius: 24px;
+            box-shadow: 0 15px 35px rgba(0, 86, 150, 0.1);
             width: 100%;
-            max-width: 420px;
+            max-width: 440px;
             text-align: center;
+            border: 1px solid rgba(0, 86, 150, 0.05);
         }
 
         .logo {
             max-width: 100%;
             height: auto;
-            margin-bottom: 20px;
+            margin-bottom: 25px;
+            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.05));
         }
 
         .section-label {
-            font-size: 0.8rem;
-            color: #888;
-            margin: 25px 0 10px;
+            font-size: 0.75rem;
+            color: #94a3b8;
+            margin: 25px 0 12px;
             text-align: left;
-            border-bottom: 1px solid #eee;
-            padding-bottom: 5px;
+            border-bottom: 1px solid #f1f5f9;
+            padding-bottom: 6px;
             text-transform: uppercase;
-            letter-spacing: 0.5px;
+            letter-spacing: 1px;
+            font-weight: 700;
         }
 
         .links-container {
             display: flex;
             flex-direction: column;
-            gap: 12px;
+            gap: 14px;
         }
 
         .btn {
-            display: block;
-            padding: 14px 15px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 16px 20px;
             background-color: var(--white);
             color: var(--primary-blue);
             text-decoration: none;
-            border: 2px solid var(--primary-blue);
-            border-radius: 12px;
+            border: 2px solid #e2e8f0;
+            border-radius: 16px;
             font-weight: 600;
-            transition: all 0.3s ease;
+            transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
             font-size: 0.9rem;
-            line-height: 1.2;
+            line-height: 1.3;
+            text-align: left;
         }
 
         .btn:hover {
-            background-color: var(--primary-blue);
-            color: var(--white);
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(0, 86, 150, 0.2);
+            border-color: var(--primary-blue);
+            background-color: #f8fbff;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0, 86, 150, 0.12);
         }
 
         .btn-download {
-            background-color: #f0f7ff;
-            border-style: dashed;
+            border-style: solid;
+            background-color: #fcfdfe;
         }
 
         .btn-whatsapp {
-            border-color: #25d366;
-            color: #128c7e;
+            border-color: #dcfce7;
+            color: #166534;
+            background-color: #f0fdf4;
         }
 
         .btn-whatsapp:hover {
-            background-color: #25d366;
-            border-color: #25d366;
+            border-color: var(--accent-green);
+            background-color: var(--accent-green);
             color: white;
-            box-shadow: 0 5px 15px rgba(37, 211, 102, 0.2);
+        }
+
+        .badge {
+            font-size: 0.65rem;
+            background: var(--badge-new);
+            color: white;
+            padding: 2px 8px;
+            border-radius: 20px;
+            margin-left: 8px;
+            text-transform: uppercase;
+        }
+
+        .btn-icon {
+            font-size: 1.2rem;
+            margin-right: 12px;
+            flex-shrink: 0;
+        }
+
+        .btn-content {
+            flex-grow: 1;
         }
 
         .footer {
             margin-top: 40px;
-            font-size: 0.8rem;
-            color: #999;
+            font-size: 0.75rem;
+            color: #94a3b8;
+            line-height: 1.5;
         }
 
         @media (max-width: 480px) {
             .container {
                 padding: 30px 20px;
+            }
+            .btn {
+                padding: 14px 16px;
             }
         }
     </style>
@@ -124,24 +156,34 @@
         <div class="links-container">
             
             <div class="section-label">Manuais Técnicos</div>
-            <a href="https://github.com/mktecheletronica/site/blob/main/Manual%20Multec%20700%20DashBoard%20V2.1.pdf" target="_blank" class="btn btn-download">
-                Manual Multec 700 DashBoard 2.1.pdf
+            
+            <a href="https://github.com/mktecheletronica/site/releases/download/v3.0/Manual.Multec.700.DashBoard.V2.1.pdf" class="btn btn-download">
+                <span class="btn-icon">📄</span>
+                <span class="btn-content">Manual Multec 700 DashBoard 2.1.pdf</span>
             </a>
-            <a href="https://github.com/mktecheletronica/site/blob/main/Manual%20Multec%20700%20DashBoard%20V3.0.pdf" target="_blank" class="btn btn-download">
-                Manual Multec 700 DashBoard 3.0.pdf
+
+            <a href="https://github.com/mktecheletronica/site/releases/download/v3.0/Manual.Multec.700.DashBoard.V3.0.pdf" class="btn btn-download">
+                <span class="btn-icon">📄</span>
+                <span class="btn-content">Manual Multec 700 DashBoard 3.0.pdf <span class="badge">Novo</span></span>
             </a>
 
             <div class="section-label">Programas para Atualização</div>
-            <a href="https://github.com/mktecheletronica/site/releases/download/v3.0/Atualizacao.Multec700.DashBoard.2.1_3.0.exe" target="_blank" class="btn btn-download">
-                Software para Atualização de Firmware Multec 700 DashBoard 2.1 para versão 3.0.
+            
+            <a href="https://github.com/mktecheletronica/site/releases/download/v3.0/Atualizacao.Multec700.DashBoard.2.1_3.0.exe" class="btn btn-download">
+                <span class="btn-icon">⚙️</span>
+                <span class="btn-content">Software para Atualização de Firmware Multec 700 DashBoard 2.1 para versão 3.0</span>
             </a>
 
             <div class="section-label">Contato</div>
+            
             <a href="mailto:contato@mktecheletronica.com.br" class="btn">
-                📩 Suporte via E-mail
+                <span class="btn-icon">📩</span>
+                <span class="btn-content">Suporte via E-mail</span>
             </a>
+            
             <a href="https://wa.me/5551983547295" target="_blank" class="btn btn-whatsapp">
-                🟢 Suporte via WhatsApp: (51) 98354-7295
+                <span class="btn-icon">🟢</span>
+                <span class="btn-content">Suporte via WhatsApp: (51) 98354-7295</span>
             </a>
             
         </div>
