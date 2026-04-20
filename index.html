@@ -134,6 +134,11 @@
             color: #999;
         }
 
+        .visitor-counter {
+            margin-top: 15px;
+            display: block;
+        }
+
         @media (max-width: 480px) {
             .container {
                 padding: 30px 20px;
@@ -144,14 +149,13 @@
 <body>
 
     <div class="container">
-        <!-- Logotipo: O arquivo deve se chamar logo.png no repositório -->
+        <!-- Logotipo -->
         <img src="logo.png" alt="MKTech Eletrônica" class="logo" onerror="this.style.display='none'; document.getElementById('alt-logo').style.display='block';">
         <h2 id="alt-logo" style="display:none; color:#005696; margin-bottom: 20px;">MKTech Eletrônica</h2>
 
         <div class="links-container">
             
             <div class="section-label">Manuais Técnicos</div>
-            <!-- Manual v3.0 movido para o topo da secção -->
             <a href="https://github.com/mktecheletronica/site/releases/download/v3.0/Manual.Multec.700.DashBoard.V3.0.pdf" target="_blank" class="btn btn-download">
                 Manual Multec 700 DashBoard 3.0.pdf
             </a>
@@ -187,7 +191,12 @@
 
         <div class="footer">
             &copy; 2026 MKTech Eletrônica <br>
-            Soluções em Tecnologia e Eletrónica Automóvel
+            Soluções em Tecnologia e Eletrônica Automotiva
+            
+            <!-- Contador de Visitas -->
+            <div class="visitor-counter">
+                <img src="https://hits.seeyoufarm.com/cgi-bin/hash?page=https://mktecheletronica.com.br&count_bg=%23005696&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=visitas&edge_flat=false" alt="Contador de Visitas" />
+            </div>
         </div>
     </div>
 
