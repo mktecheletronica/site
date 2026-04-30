@@ -3,14 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MKTech Eletrônica - Portal de Acesso</title>
+    <title>MKTech Eletrônica</title>
     <style>
         :root {
-            --primary-blue: #005696;
-            --secondary-blue: #0078d4;
-            --text-dark: #333;
-            --bg-light: #f4f7f9;
+            --primary: #005696;
+            --primary-dark: #003d6b;
+            --primary-light: #e6f0f8;
+            --bg: #f8fafc;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
             --white: #ffffff;
+            --shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+            --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
         }
 
         * {
@@ -19,108 +23,206 @@
             box-sizing: border-box;
         }
 
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: var(--bg-light);
-            color: var(--text-dark);
+        body, html {
+            height: 100%;
+            font-family: 'Inter', 'Segoe UI', system-ui, sans-serif;
+            background-color: var(--bg);
+            color: var(--text-main);
+            overflow-x: hidden;
+        }
+
+        /* --- NAVEGAÇÃO --- */
+        nav {
+            background: var(--white);
+            border-bottom: 1px solid #e2e8f0;
+            padding: 0 2rem;
+            height: 70px;
             display: flex;
-            justify-content: center;
             align-items: center;
-            min-height: 100vh;
-            padding: 20px;
+            justify-content: space-between;
+            position: sticky;
+            top: 0;
+            z-index: 100;
         }
 
-        .container {
-            background-color: var(--white);
-            padding: 40px 30px;
-            border-radius: 20px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-            width: 100%;
-            max-width: 420px;
+        .nav-brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-weight: 700;
+            color: var(--primary);
+            text-decoration: none;
+            font-size: 1.2rem;
+        }
+
+        .nav-brand img {
+            height: 40px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav-tab {
+            padding: 8px 16px;
+            border-radius: 8px;
+            text-decoration: none;
+            color: var(--text-muted);
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: all 0.2s;
+            cursor: pointer;
+            border: none;
+            background: transparent;
+        }
+
+        .nav-tab:hover {
+            color: var(--primary);
+            background: var(--primary-light);
+        }
+
+        .nav-tab.active {
+            color: var(--primary);
+            background: var(--primary-light);
+        }
+
+        /* --- LAYOUT DO PORTAL --- */
+        .page-content {
+            max-width: 1100px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        #portal-view {
+            display: block;
+        }
+
+        .hero {
             text-align: center;
+            margin-bottom: 50px;
         }
 
-        .logo {
-            max-width: 100%;
-            height: auto;
+        .hero h1 {
+            font-size: 2.2rem;
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+
+        /* GRID DE CARDS */
+        .dashboard-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 24px;
+        }
+
+        .card {
+            background: var(--white);
+            border-radius: 16px;
+            padding: 30px;
+            box-shadow: var(--shadow);
+            border: 1px solid #f1f5f9;
+            transition: transform 0.2s, box-shadow 0.2s;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .card-title {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 1.1rem;
+            font-weight: 700;
             margin-bottom: 20px;
+            color: var(--primary);
         }
 
-        .section-label {
-            font-size: 0.8rem;
-            color: #888;
-            margin: 25px 0 10px;
-            text-align: left;
-            border-bottom: 1px solid #eee;
-            padding-bottom: 5px;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
+        .card-title svg {
+            width: 24px;
+            height: 24px;
         }
 
-        .links-container {
+        .list {
             display: flex;
             flex-direction: column;
             gap: 12px;
         }
 
-        .btn {
-            display: block;
-            padding: 14px 15px;
-            background-color: var(--white);
-            color: var(--primary-blue);
+        .list-item {
+            display: flex;
+            flex-direction: column;
+            padding: 12px;
+            border-radius: 10px;
+            background: #f8fafc;
             text-decoration: none;
-            border: 2px solid var(--primary-blue);
-            border-radius: 12px;
-            font-weight: 600;
-            transition: all 0.3s ease;
+            color: var(--text-main);
             font-size: 0.9rem;
-            line-height: 1.2;
+            font-weight: 500;
+            border: 1px solid #e2e8f0;
+            transition: all 0.2s;
         }
 
-        .btn:hover {
-            background-color: var(--primary-blue);
-            color: var(--white);
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(0, 86, 150, 0.2);
+        .list-item:hover {
+            border-color: var(--primary);
+            background: var(--white);
+            color: var(--primary);
         }
 
-        .btn-download {
-            background-color: #f0f7ff;
-            border-style: dashed;
+        .list-item small {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            margin-top: 4px;
+            font-weight: normal;
         }
 
-        .btn-whatsapp {
-            border-color: #25d366;
-            color: #128c7e;
-        }
-
-        .btn-whatsapp:hover {
-            background-color: #25d366;
-            border-color: #25d366;
+        /* BOTÕES ESPECIAIS */
+        .btn-cta {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            background: var(--primary);
             color: white;
-            box-shadow: 0 5px 15px rgba(37, 211, 102, 0.2);
+            padding: 16px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 700;
+            margin-top: 20px; /* Reduzido para ficar mais próximo do texto */
+            transition: background 0.2s;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        .btn-cta:hover {
+            background: var(--primary-dark);
         }
 
         .help-text {
             display: block;
             font-size: 0.7rem;
             color: #666;
-            text-decoration: none;
-            margin-top: 8px;
+            margin-top: 15px;
             line-height: 1.4;
+            text-align: left;
         }
 
         .help-text b {
-            color: var(--primary-blue);
+            color: var(--primary);
         }
 
         .security-link {
             display: inline-block;
             font-size: 0.65rem;
-            color: #005696;
+            color: var(--primary);
             text-decoration: none;
             margin-top: 5px;
-            opacity: 0.7;
+            opacity: 0.8;
         }
 
         .security-link:hover {
@@ -128,10 +230,26 @@
             opacity: 1;
         }
 
-        .footer {
-            margin-top: 40px;
-            font-size: 0.8rem;
-            color: #999;
+        /* --- VIEW DO LOG (FULLSCREEN) --- */
+        #log-view {
+            display: none;
+            height: calc(100vh - 70px);
+            width: 100%;
+        }
+
+        #streamlit-frame {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        /* FOOTER */
+        .footer-minimal {
+            text-align: center;
+            margin-top: 60px;
+            padding-bottom: 40px;
+            color: var(--text-muted);
+            font-size: 0.85rem;
         }
 
         .visitor-counter {
@@ -139,66 +257,134 @@
             display: block;
         }
 
-        @media (max-width: 480px) {
-            .container {
-                padding: 30px 20px;
-            }
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .dashboard-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
 <body>
 
-    <div class="container">
-        <!-- Logotipo -->
-        <img src="logo.png" alt="MKTech Eletrônica" class="logo" onerror="this.style.display='none'; document.getElementById('alt-logo').style.display='block';">
-        <h2 id="alt-logo" style="display:none; color:#005696; margin-bottom: 20px;">MKTech Eletrônica</h2>
+    <nav>
+        <a href="#" onclick="showTab('home')" class="nav-brand">
+            <img src="logo.png" alt="MKTECH" onerror="this.style.display='none';">
+        </a>
+        <div class="nav-links">
+            <button onclick="showTab('home')" id="tab-home" class="nav-tab active">Portal</button>
+            <button onclick="showTab('log')" id="tab-log" class="nav-tab">Leitor de Log</button>
+            <a href="https://wa.me/5551983547295" target="_blank" class="nav-tab">Suporte</a>
+        </div>
+    </nav>
 
-        <div class="links-container">
-            
-            <div class="section-label">Manuais Técnicos</div>
-            <a href="https://github.com/mktecheletronica/site/releases/download/v3.0/Manual.Multec.700.DashBoard.V3.0.pdf" target="_blank" class="btn btn-download">
-                Manual Multec 700 DashBoard 3.0.pdf
-            </a>
-            <a href="https://github.com/mktecheletronica/site/releases/download/v3.0/Manual.Multec.700.DashBoard.V2.1.pdf" target="_blank" class="btn btn-download">
-                Manual Multec 700 DashBoard 2.1.pdf
-            </a>
-            <a href="https://github.com/mktecheletronica/site/releases/download/v3.0/Manual.de.atualizacao.Multec700.DashBoard.2.1.pdf" target="_blank" class="btn btn-download">
-                Manual de Atualização Multec 700 DashBoard 2.1.pdf
-            </a>
+    <!-- PORTAL PRINCIPAL -->
+    <main id="portal-view" class="page-content">
+        <div class="hero">
+            <h1>Área do Cliente</h1>
+        </div>
 
-            <div class="section-label">Programas para Atualização</div>
-            <div>
-                <a href="https://github.com/mktecheletronica/site/releases/download/v3.0/Atualizacao.Multec700.DashBoard.2.1_3.0.exe" target="_blank" class="btn btn-download">
-                    Software para Atualização de Firmware Multec 700 DashBoard 2.1 para versão 3.0
-                </a>
+        <div class="dashboard-grid">
+            <!-- Coluna 1: Diagnóstico Online -->
+            <div class="card">
+                <div class="card-title">
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path></svg>
+                    Ferramenta Online
+                </div>
+                <p style="font-size: 0.9rem; color: var(--text-muted);">Analise seus arquivos de log gerados pelo <b>Multec 700 DashBoard 3.0</b>.</p>
+                <button onclick="showTab('log')" class="btn-cta">
+                    Abrir Leitor de Log 3.0
+                </button>
+            </div>
+
+            <!-- Coluna 2: Documentação -->
+            <div class="card">
+                <div class="card-title">
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path></svg>
+                    Manuais Técnicos
+                </div>
+                <div class="list">
+                    <a href="https://github.com/mktecheletronica/site/releases/download/v3.0/Manual.Multec.700.DashBoard.V3.0.pdf" target="_blank" class="list-item">
+                        Manual Multec 700 DashBoard 3.0
+                        <small>Versão mais recente - PDF</small>
+                    </a>
+                    <a href="https://github.com/mktecheletronica/site/releases/download/v3.0/Manual.Multec.700.DashBoard.V2.1.pdf" target="_blank" class="list-item">
+                        Manual Multec 700 DashBoard 2.1
+                        <small>Versão anterior - PDF</small>
+                    </a>
+                    <a href="https://github.com/mktecheletronica/site/releases/download/v3.0/Manual.de.atualizacao.Multec700.DashBoard.2.1.pdf" target="_blank" class="list-item">
+                        Guia de Atualização (V2.1 → V3.0)
+                        <small>Instruções passo a passo</small>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Coluna 3: Downloads -->
+            <div class="card">
+                <div class="card-title">
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
+                    Downloads
+                </div>
+                <div class="list">
+                    <!-- PLAY STORE LINK -->
+                    <a href="https://play.google.com/store/apps/details?id=mktech.multec700.dashboard&hl=pt_BR" target="_blank" class="list-item" style="border-color: #2ecc71;">
+                        App Multec 700 DashBoard 3.0
+                        <small>Disponível na Google Play Store</small>
+                    </a>
+                    <!-- WINDOWS EXE LINK -->
+                    <a href="https://github.com/mktecheletronica/site/releases/download/v3.0/Atualizacao.Multec700.DashBoard.2.1_3.0.exe" target="_blank" class="list-item">
+                        Firmware Update Tool (Windows)
+                        <small>Atualizador 2.1 → 3.0 (.exe)</small>
+                    </a>
+                </div>
+                
                 <span class="help-text">
-                    ⚠️ Ao instalar, clique em <b>"Mais Informações"</b> e <b>"Executar assim mesmo"</b> para autorizar no Windows.
+                    ⚠️ Ao instalar no Windows, clique em <b>"Mais Informações"</b> e <b>"Executar assim mesmo"</b> para autorizar.
                 </span>
                 <a href="https://www.virustotal.com/gui/file/d96822b4befbb53cbd1874da38eb425ee144eb2ddd7176837e7653b2f0208088" target="_blank" class="security-link">
                     🛡️ Ver relatório de integridade VirusTotal
                 </a>
             </div>
-
-            <div class="section-label">Contato</div>
-            <a href="mailto:contato@mktecheletronica.com.br" class="btn">
-                📩 Suporte via E-mail
-            </a>
-            <a href="https://wa.me/5551983547295" target="_blank" class="btn btn-whatsapp">
-                🟢 Suporte via WhatsApp: (51) 98354-7295
-            </a>
-            
         </div>
 
-        <div class="footer">
-            &copy; 2026 MKTech Eletrônica <br>
-            Soluções em Tecnologia e Eletrônica Automotiva
-            
-            <!-- Restaurado: Contador de Visitas dwyl/hits -->
+        <footer class="footer-minimal">
+            &copy; 2026 - MKTECH ELETRÔNICA
             <div class="visitor-counter">
-                <img src="https://hits.dwyl.com/mktecheletronica/site.svg?style=flat-square&color=005696" alt="Contador de Visitas" />
+                <img src="https://hits.dwyl.com/mktecheletronica/site.svg?style=flat-square&color=005696" alt="Visitas">
             </div>
-        </div>
+        </footer>
+    </main>
+
+    <!-- VIEW DO LEITOR DE LOG -->
+    <div id="log-view">
+        <iframe 
+            src="https://multec700.streamlit.app/?embed=true" 
+            id="streamlit-frame" 
+            allow="clipboard-read;clipboard-write;fullscreen"
+        ></iframe>
     </div>
+
+    <script>
+        function showTab(tab) {
+            const portal = document.getElementById('portal-view');
+            const log = document.getElementById('log-view');
+            const tabHome = document.getElementById('tab-home');
+            const tabLog = document.getElementById('tab-log');
+
+            if (tab === 'home') {
+                portal.style.display = 'block';
+                log.style.display = 'none';
+                tabHome.classList.add('active');
+                tabLog.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            } else {
+                portal.style.display = 'none';
+                log.style.display = 'block';
+                tabHome.classList.remove('active');
+                tabLog.classList.add('active');
+                document.body.style.overflow = 'hidden'; 
+            }
+            window.scrollTo(0, 0);
+        }
+    </script>
 
 </body>
 </html>
