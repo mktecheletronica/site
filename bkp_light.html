@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MKTech Eletrônica - Portal de Acesso</title>
+    <style>
+        :root {
+            --primary-blue: #005696;
+            --secondary-blue: #0078d4;
+            --text-dark: #333;
+            --bg-light: #f4f7f9;
+            --white: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            background-color: var(--white);
+            padding: 40px 30px;
+            border-radius: 20px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            width: 100%;
+            max-width: 420px;
+            text-align: center;
+        }
+
+        .logo {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 20px;
+        }
+
+        .section-label {
+            font-size: 0.8rem;
+            color: #888;
+            margin: 25px 0 10px;
+            text-align: left;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 5px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .links-container {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .btn {
+            display: block;
+            padding: 14px 15px;
+            background-color: var(--white);
+            color: var(--primary-blue);
+            text-decoration: none;
+            border: 2px solid var(--primary-blue);
+            border-radius: 12px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            font-size: 0.9rem;
+            line-height: 1.2;
+        }
+
+        .btn:hover {
+            background-color: var(--primary-blue);
+            color: var(--white);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 86, 150, 0.2);
+        }
+
+        .btn-download {
+            background-color: #f0f7ff;
+            border-style: dashed;
+        }
+
+        .btn-whatsapp {
+            border-color: #25d366;
+            color: #128c7e;
+        }
+
+        .btn-whatsapp:hover {
+            background-color: #25d366;
+            border-color: #25d366;
+            color: white;
+            box-shadow: 0 5px 15px rgba(37, 211, 102, 0.2);
+        }
+
+        .help-text {
+            display: block;
+            font-size: 0.7rem;
+            color: #666;
+            text-decoration: none;
+            margin-top: 8px;
+            line-height: 1.4;
+        }
+
+        .help-text b {
+            color: var(--primary-blue);
+        }
+
+        .security-link {
+            display: inline-block;
+            font-size: 0.65rem;
+            color: #005696;
+            text-decoration: none;
+            margin-top: 5px;
+            opacity: 0.7;
+        }
+
+        .security-link:hover {
+            text-decoration: underline;
+            opacity: 1;
+        }
+
+        .footer {
+            margin-top: 40px;
+            font-size: 0.8rem;
+            color: #999;
+        }
+
+        .visitor-counter {
+            margin-top: 15px;
+            display: block;
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 30px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Logotipo -->
+        <img src="logo.png" alt="MKTech Eletrônica" class="logo" onerror="this.style.display='none'; document.getElementById('alt-logo').style.display='block';">
+        <h2 id="alt-logo" style="display:none; color:#005696; margin-bottom: 20px;">MKTech Eletrônica</h2>
+
+        <div class="links-container">
+            
+            <div class="section-label">Manuais Técnicos</div>
+            <a href="https://github.com/mktecheletronica/site/releases/download/v3.0/Manual.Multec.700.DashBoard.V3.0.pdf" target="_blank" class="btn btn-download">
+                Manual Multec 700 DashBoard 3.0.pdf
+            </a>
+            <a href="https://github.com/mktecheletronica/site/releases/download/v3.0/Manual.Multec.700.DashBoard.V2.1.pdf" target="_blank" class="btn btn-download">
+                Manual Multec 700 DashBoard 2.1.pdf
+            </a>
+            <a href="https://github.com/mktecheletronica/site/releases/download/v3.0/Manual.de.atualizacao.Multec700.DashBoard.2.1.pdf" target="_blank" class="btn btn-download">
+                Manual de Atualização Multec 700 DashBoard 2.1.pdf
+            </a>
+
+            <div class="section-label">Programas para Atualização</div>
+            <div>
+                <a href="https://github.com/mktecheletronica/site/releases/download/v3.0/Atualizacao.Multec700.DashBoard.2.1_3.0.exe" target="_blank" class="btn btn-download">
+                    Software para Atualização de Firmware Multec 700 DashBoard 2.1 para versão 3.0
+                </a>
+                <span class="help-text">
+                    ⚠️ Ao instalar, clique em <b>"Mais Informações"</b> e <b>"Executar assim mesmo"</b> para autorizar no Windows.
+                </span>
+                <a href="https://www.virustotal.com/gui/file/d96822b4befbb53cbd1874da38eb425ee144eb2ddd7176837e7653b2f0208088" target="_blank" class="security-link">
+                    🛡️ Ver relatório de integridade VirusTotal
+                </a>
+            </div>
+
+            <div class="section-label">Contato</div>
+            <a href="mailto:contato@mktecheletronica.com.br" class="btn">
+                📩 Suporte via E-mail
+            </a>
+            <a href="https://wa.me/5551983547295" target="_blank" class="btn btn-whatsapp">
+                🟢 Suporte via WhatsApp: (51) 98354-7295
+            </a>
+            
+        </div>
+
+        <div class="footer">
+            &copy; 2026 MKTech Eletrônica <br>
+            Soluções em Tecnologia e Eletrônica Automotiva
+            
+            <!-- Restaurado: Contador de Visitas dwyl/hits -->
+            <div class="visitor-counter">
+                <img src="https://hits.dwyl.com/mktecheletronica/site.svg?style=flat-square&color=005696" alt="Contador de Visitas" />
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
